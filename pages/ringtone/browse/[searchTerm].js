@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import searchData from '../../../dataFetch/search'
+import { server } from '../../../config';
 
 export default function Home({data}) {
   const router = useRouter()
@@ -7,7 +7,7 @@ export default function Home({data}) {
  
   return (
     <>
-     
+     {JSON.stringify(data)}
     </>
     )
 }
@@ -20,19 +20,16 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
   
   // Call an external API endpoint to get posts
-  //const res = await fetch('')
-  //const posts = await res.json()
   const { searchTerm } = params;
-  const data = await searchData({
-    searchTerm : searchTerm
-  })
-  const dat = JSON.stringify(data);
+  const res = await fetch(`${server}/api/search?searchTerm=${searchTerm}`)
+  console.log(res)
+
+  
+  const data = await res.json()
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
-    props: {
-      data : data
-    },
+    props: {data},
   }
 }

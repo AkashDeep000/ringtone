@@ -7,6 +7,6 @@ export default async function Search (searchQuery){
   const youtubeResult = await ytsr(searchTerm, {
         gl : country
     })
-    return youtubeResult;
+    return "☑️☑️☑️ ytsr complete";
   }
   

@@ -8,6 +8,6 @@ export default async function Search (searchQuery){
   const ringtoneInfo = ytRingtone(searchQuery)
   const extraInfoData = extraInfo(searchQuery)
   const a = await Promise.all([extraInfoData, ringtoneInfo])
-  console.log(ringtoneInfo)
+  //console.log(ringtoneInfo)
   return a
 }

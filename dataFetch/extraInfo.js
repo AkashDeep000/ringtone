@@ -19,7 +19,7 @@ export default async function Search (searchQuery){
     await api.initalize()
     const searchData = await api.search(searchQuery.searchTerm, "video")
   
-    console.log(searchData)
+    //console.log(searchData)
   }
   //Cheak if this is a movie or web-series
     else if (/(movie|season)/g.test(googleSuggestResStr)) {
