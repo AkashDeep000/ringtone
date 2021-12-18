@@ -7,7 +7,7 @@ export default function Home({data}) {
  
   return (
     <>
-     {data}
+     
     </>
     )
 }
@@ -32,7 +32,7 @@ export async function getStaticProps({params}) {
   // will receive `posts` as a prop at build time
   return {
     props: {
-      data : dat
+      data : data
     },
   }
 }
