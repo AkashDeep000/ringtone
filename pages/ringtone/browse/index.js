@@ -1,5 +1,3 @@
-import searchData from '../../../dataFetch/search'
-import googleSuggest from '../../../dataFetch/googleSuggest'
 
 export default function Home({data}) {
   //console.log(data)
