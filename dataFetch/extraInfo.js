@@ -14,11 +14,12 @@ export default async function Search (searchQuery){
     if (/(song|singer|lyricl|chord|music)/g.test(googleSuggestResStr)) {
        console.log("song")
     //search on YoutubeMusicApi
-  
+    console.log("YT music start")
     const api = new YoutubeMusicApi()
     await api.initalize()
+    console.log("YT music initalized")
     const searchData = await api.search(searchQuery.searchTerm, "video")
-  
+    console.log("YT music end")
     //console.log(searchData)
   }
   //Cheak if this is a movie or web-series

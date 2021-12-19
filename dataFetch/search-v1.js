@@ -8,7 +8,7 @@ export default async function Search (searchQuery) {
   const ringtonesInfo = async() => {
     try {
       console.log("under ringtonesInfo")
-      >
+      
   
       console.log(youtubeResult)
     } catch (e) {
