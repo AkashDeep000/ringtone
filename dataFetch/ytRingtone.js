@@ -1,16 +1,28 @@
-import ytsr from 'ytsr'
+import ytsr from "ytsr"
 
 export default async function Search (searchQuery){
   const searchTerm = searchQuery.searchTerm;
   const country = searchQuery.country;
   console.log("YT start")
-  const youtubeResult = await ytsr(searchTerm, {
+  /*const youtubeResult = await ytsr(searchTerm, {
         gl : country,
-        
-    })
+        limit: 10
+    })*/
+  const filters1 = await ytsr.getFilters(`${searchTerm} ringtone`);
+  const filter1 = filters1.get('Type').get('Video');
+  const filters2 = await ytsr.getFilters(filter1.url);
+  const filter2 = filters2.get('Duration').get('Under 4 minutes');
+  
+  const options = {
+  pages: 1,
+}
+
+  const youtubeResult = await ytsr(filter2.url, options);
+  
+  
   console.log("YT End")  
  //filter youtubeResult
-  const filterArray = await youtubeResult.items.filter(el => {
+ const filterArray = await youtubeResult.items.filter(el => {
   const duration = el.duration?.replace(":", "")
   
   if (duration <= 60 && el.type == "video" && 
@@ -19,21 +31,37 @@ export default async function Search (searchQuery){
   }
 })
 //creating filal result
-const finlArray = await filterArray.map(el => {
-  const finlArray = {
+const finalArray = await filterArray.map(el => {
+  const finalArray = {
       id: el.id,
       title: el.title,
       duration: el.duration,
       thumbnails: el.bestThumbnail.url,
   }
     
-  return finlArray
+  return finalArray
 })
+ 
+/*
+const filterArray = await ytsr.GetData(searchTerm,false,40)
+
+//creating filal result
+const finalArray = await filterArray.items.map(el => {
+  const finalArray = {
+      id: el.id,
+      title: el.title,
+      duration: el.length?.simpleText,
+      thumbnail: el.thumbnail.thumbnails[1]?.url,
+  }
+   
+  return finalArray 
+})
+*/
     //return "☑️☑️☑️ ytsr complete";
 const data = {
   originalQuery: youtubeResult.originalQuery,
   correctedQuery: youtubeResult.correctedQuery,
-  items: finlArray,
+  items: finalArray,
 }
 console.log("YT data Calculated")
     return data;
