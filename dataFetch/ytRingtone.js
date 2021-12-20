@@ -8,7 +8,7 @@ export default async function Search (searchQuery){
         gl : country,
         limit: 10
     })*/
-  const filters1 = await ytsr.getFilters(`${searchTerm} ringtone`);
+  const filters1 = await ytsr.getFilters(`"ringtone" + ${searchTerm}`);
   const filter1 = filters1.get('Type').get('Video');
   const filters2 = await ytsr.getFilters(filter1.url);
   const filter2 = filters2.get('Duration').get('Under 4 minutes');
@@ -59,8 +59,8 @@ const finalArray = await filterArray.items.map(el => {
 */
     //return "☑️☑️☑️ ytsr complete";
 const data = {
-  originalQuery: youtubeResult.originalQuery,
-  correctedQuery: youtubeResult.correctedQuery,
+  originalQuery: youtubeResult.originalQuery.slice(13),
+  correctedQuery: youtubeResult.correctedQuery.slice(13),
   items: finalArray,
 }
 console.log("YT data Calculated")
