@@ -1,0 +1,65 @@
+.container {
+  color: var(--ink);
+  box-shadow: 0 0 1rem var(--backgroundMainD);
+  border-radius: .5rem;
+  width: 100%;
+  background: white;
+}
+.playerTitleInfo {
+  padding: .7rem .5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto auto;
+}
+.player{
+  margin: 0;
+  padding: 0 1rem 0 .5rem;
+  grid-row: span 2;
+}
+.title {
+  grid-column: span 2;
+  font-size: var(--font400);
+  margin: 0;
+  padding-bottom: .5rem;
+}
+.duration {
+  color: var(--inkLite);
+  font-size: var(--font300);
+  padding-right: .8rem;
+}
+.downloads {
+  color: var(--inkLite);
+  font-size: var(--font300);
+  
+}
+.tags {
+  padding: .5rem;
+  display: flex;
+  gap: .5rem;
+}
+.tag {
+  background: rgb(14,103,196); background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: .4em;
+  display: inline-block;
+  border: .1rem solid var(--backgroundMain);
+  border-radius: .3em;
+  font-size: var(--font400);
+}
+.option {
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.download {
+  background: rgb(14,103,196); background: linear-gradient(45deg, var(--main) 0%, var(--mainLite) 100%);
+  color: white;
+  text-decoration: none;
+  font-size: var(--font400);
+  font-weight: 400;
+  padding: .5em;
+  border-radius: .3rem;
+}

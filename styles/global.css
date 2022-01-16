@@ -1,0 +1,128 @@
+:root {
+  --main: #23C4ED;
+  --mainLite: rgb(97,164,251);
+  --mainD: rgb(35,118,237);
+  --ink: rgb(52,73,86);
+  --inkLite: rgb(121,131,135);
+  --backgroundMain: #edf1f9;
+  --backgroundMainD: rgb(207,214,227);
+  
+  --fontXl : clamp();
+  --font300: .9rem;
+  --font400: 1rem;
+  --font500: 1.2rem;
+  --font600: 1.5rem;
+  --font700: 1.8rem;
+  --font800: 2rem;
+  
+}
+body {
+  margin: 0 auto;
+  width: 100%;
+  font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.header{
+  padding: .38rem .5rem;
+  height: auto;
+  box-shadow: 0 -.5rem 1rem gray;
+  border-radius: 0 0 .5rem .5rem;
+  background: white;
+  backface-visibility: hidden;
+  position: sticky;
+  top: 0;
+  z-index: +9999;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3rem 1fr 1fr 3rem;
+  margin: 0;
+}
+.headerLeftIcon{
+  background-color: var(--backgroundMain);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 15%;
+  transition: border-radius .2s ease-in-out;
+  padding: .5rem;
+}
+.menuIconSpan{
+  padding: 0;
+  margin: .12rem 0 .3rem 0;
+  width: 100%;
+  height: .2rem;
+  border-radius: .5rem;
+  background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
+}
+.backIconSpan{
+  
+  margin: .35rem 0 .35rem 0;
+  width: 75%;
+  height: .2rem;
+  border-radius: .5rem;
+  background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
+}
+.backIconSpanTop{
+  transform: rotate(-35deg);
+}
+.backIconSpanBotton{
+  transform: rotate(35deg);
+}
+.headerLogo{
+  padding: 0;
+  background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--font700);
+  font-weight: 500;
+  
+}
+.searchBox{
+  width: 100%;
+  height: 2.2rem;
+  background: white;
+  border: .1rem solid #edf1f9;
+  border-radius: .5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.searchBoxInput, .searchBoxInput:active {
+  border: none;
+  outline:none;
+  background: white;
+  font-size: var(--font500);
+  color: var(--inkLite);
+  width: 100%;
+}
+.likedIcon{
+  text-align: center;
+  font-size: var(--font800);
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cardGrid {
+  margin: .5rem;
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+.headSection {
+  
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='420' preserveAspectRatio='none' viewBox='0 0 1440 420'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1048%26quot%3b)' fill='none'%3e%3crect width='1440' height='420' x='0' y='0' fill='url(%23SvgjsLinearGradient1049)'%3e%3c/rect%3e%3cpath d='M 0%2c71 C 57.6%2c78.4 172.8%2c106.2 288%2c108 C 403.2%2c109.8 460.8%2c68.8 576%2c80 C 691.2%2c91.2 748.8%2c164.4 864%2c164 C 979.2%2c163.6 1036.8%2c72.2 1152%2c78 C 1267.2%2c83.8 1382.4%2c170 1440%2c193L1440 420L0 420z' fill='rgba(138%2c 210%2c 255%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c388 C 72%2c364 216%2c278.6 360%2c268 C 504%2c257.4 576%2c329.8 720%2c335 C 864%2c340.2 936%2c296.8 1080%2c294 C 1224%2c291.2 1368%2c315.6 1440%2c321L1440 420L0 420z' fill='rgba(120%2c 203%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1048'%3e%3crect width='1440' height='420' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='17.71%25' y1='160.71%25' x2='82.29%25' y2='-60.71%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1049'%3e%3cstop stop-color='rgba(150%2c 234%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(141%2c 188%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  
+  margin: 0 0 -1.5rem 0;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+.headSectionTitle {
+  margin: 0;
+  color: white;
+  padding: 1rem;
+  font-size: var(--font600);
+}

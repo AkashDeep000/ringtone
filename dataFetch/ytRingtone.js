@@ -35,7 +35,7 @@ const finalArray = await filterArray.map(el => {
   const finalArray = {
       id: el.id,
       title: el.title,
-      duration: el.duration,
+      duration: parseInt(el.duration.replace(":",""), 10),
       thumbnails: el.bestThumbnail.url,
   }
     

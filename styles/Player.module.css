@@ -1,0 +1,29 @@
+.spinner{
+  width: 2.3rem;
+  height: 2.3rem;
+  border: .7rem solid var(--backgroundMain);
+  border-top: .7rem solid var(--main);
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(.5, .7, 1, 1) infinite;
+}
+.round{
+  width: 3.7rem;
+  height: 3.7rem;
+  border-radius: 50%;
+  background: rgb(14,103,196); background: linear-gradient(45deg, var(--main) 0%, var(--mainLite) 100%);
+  display: grid;
+  place-items: center;
+}
+.svgTriangle{
+  transform: rotate(90deg)
+}
+.svgPause{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 10%;
+  background: var(--backgroundMain);
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
