@@ -17,6 +17,7 @@ export default function() {
     await depatch({
       type:"SET_PLAYING",
       isPlaying:true,
+      isEnd:false,
      })
     }
   }
@@ -27,6 +28,7 @@ export default function() {
     await depatch({
       type:"SET_PLAYING",
       isPlaying:false,
+      isEnd:false,
      })
     }
   }
@@ -45,6 +47,7 @@ export default function() {
      depatch({
        type:"SET_PLAYING",
        isPlaying:false,
+       isEnd:true,
      });
     });
 
@@ -54,6 +57,7 @@ export default function() {
     audio.removeEventListener('ended', () => depatch({
       type:"SET_PLAYING",
        isPlaying:false,
+       isEnd:true,
      })
      );
     };

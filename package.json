@@ -20,6 +20,7 @@
     "react-awesome-audio": "^1.1.0",
     "react-dom": "^17.0.2",
     "youtube-music-api": "^1.0.6",
+    "ytdl-core": "^4.10.0",
     "ytsr": "^3.5.3"
   }
 }

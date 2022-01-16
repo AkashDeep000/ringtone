@@ -11,12 +11,20 @@ export default function Header () {
   const handleSearchQueryChange = (event) => {
     setSearchQuery(event.target.value)
   }
+  const inputRef = useRef()
   const router = useRouter()
   const hadleSearchClick = () => {
     if (searchQuery !== "") {
       router.push(`/ringtone/browse/${encodeURIComponent(searchQuery)}`)
     }
   }
+  const hadleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      inputRef.current.blur()
+      hadleSearchClick()
+    }
+  }
+  
   return (
     <>
     <div className="header"
@@ -65,7 +73,7 @@ export default function Header () {
       active: true,
       for: "search"
     })}>
-    <input value={searchQuery} onChange={handleSearchQueryChange} className="searchBoxInput"></input>
+    <input ref={inputRef} value={searchQuery} onChange={handleSearchQueryChange} onKeyDown={hadleKeyPress} className="searchBoxInput"></input>
 
     <svg onClick={hadleSearchClick} xmlns="http://www.w3.org/2000/svg" height="1.8rem" width="1.8rem">
   <defs>

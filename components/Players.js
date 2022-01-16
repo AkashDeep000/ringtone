@@ -12,12 +12,12 @@ function Player ({props}) {
   if (state?.ref !== ref.current || !state?.isPlay) {
     dispatch({
      type:"PLAY",
-     src:"https://cldup.com/qR72ozoaiQ.mp3",
+     src:`http://localhost:3000/api/audio?id=${props.id}`,
      ref:ref.current,
    })
   }else {
     dispatch({
-     type:"PAUSE"
+     type:"PAUSE",
    })
   }
   } 
@@ -29,7 +29,7 @@ function Player ({props}) {
          <div className={styles.svgPause}></div>
          </div>
          )
-     }else if (state?.ref == ref.current && state?.isPlay && !state?.isPlaying) {
+     }else if (state?.ref == ref.current && state?.isPlay && !state?.isPlaying && !state?.isEnd) {
      return (
        <div className={styles.spinner}></div>
        )

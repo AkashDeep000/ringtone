@@ -7,18 +7,22 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 src: action.src,
+                isPlaying:false,
                 isPlay: true,
+                isEnd: false,
                 ref: action.ref,
             };
         case 'PAUSE':
             return {
                 ...state,
-                isPlay: false
+                isPlay: false,
+                isPlaying:false,
             };
         case 'SET_PLAYING':
             return {
                 ...state,
-                isPlaying:action.isPlaying
+                isPlaying:action.isPlaying,
+                isEnd:action.isEnd,
             };
         default:
             return state;

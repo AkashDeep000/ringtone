@@ -1,7 +1,7 @@
 :root {
-  --main: #23C4ED;
-  --mainLite: rgb(97,164,251);
-  --mainD: rgb(35,118,237);
+  --main: rgb(35,213,213);
+  --mainLite: rgb(81,185,253);
+  --mainD: rgb(30,157,213);
   --ink: rgb(52,73,86);
   --inkLite: rgb(121,131,135);
   --backgroundMain: #edf1f9;
