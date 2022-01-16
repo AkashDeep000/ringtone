@@ -12,7 +12,7 @@ function Player ({props}) {
   if (state?.ref !== ref.current || !state?.isPlay) {
     dispatch({
      type:"PLAY",
-     src:`http://localhost:3000/api/audio?id=${props.id}`,
+     src:`https://ringtone.vercel.app/api/audio?id=${props.id}`,
      ref:ref.current,
    })
   }else {
