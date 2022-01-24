@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  box-shadow: 0 0 5rem #00000016;
+  padding: .5rem;
+  display: grid;
+  gap: 1rem;
+  justify-content: left;
+  grid-template-row: auto auto;
+  grid-template-columns: auto auto;
+  border-right: .3rem;
+}
+
+.image {
+  width: 5rem;
+  height: 5rem;
+  background: var(--backgroundMain);
+  border-radius: .3rem;
+  grid-row: span 2;
+}
+
+.title {
+  font-size: var(--font500);
+}
+.artist {
+  font-size: var(--font400);
+}

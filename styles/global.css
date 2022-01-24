@@ -16,6 +16,11 @@
   --font800: 2rem;
   
 }
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -33,19 +38,22 @@ body {
   backface-visibility: hidden;
   position: sticky;
   top: 0;
-  z-index: +9999;
+  z-index: +111;
   display: grid;
   align-items: center;
-  grid-template-columns: 3rem 1fr 1fr 3rem;
+  grid-template-columns: auto 1fr 1fr auto;
   margin: 0;
+  
 }
 .headerLeftIcon{
   background-color: var(--backgroundMain);
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 15%;
   transition: border-radius .2s ease-in-out;
   padding: .5rem;
+  margin: auto .2rem;
+  
 }
 .menuIconSpan{
   padding: 0;
@@ -70,6 +78,7 @@ body {
   transform: rotate(35deg);
 }
 .headerLogo{
+  margin-left: .3rem;
   padding: 0;
   background: linear-gradient(45deg, var(--main) 0%, var(--mainD) 100%);
     -webkit-background-clip: text;

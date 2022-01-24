@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import HeaderMenu from "components/HeaderMenu"
+
 
 export default function Header () {
   const [backButton, setBackButton] = useState({
@@ -15,7 +17,7 @@ export default function Header () {
   const router = useRouter()
   const hadleSearchClick = () => {
     if (searchQuery !== "") {
-      router.push(`/ringtone/browse/${encodeURIComponent(searchQuery)}`)
+      router.push(`/ringtone/s/${encodeURIComponent(searchQuery)}`)
     }
   }
   const hadleKeyPress = (e) => {
@@ -88,7 +90,13 @@ export default function Header () {
   
     </div>
     <div className="likedIcon">♡</div>
+    
+    {backButton.active && backButton.for == "menu" ?
+    <HeaderMenu props={[backButton, setBackButton]}/>
+    : null}    
+    
     </div>
+
     </>
     )
 }
